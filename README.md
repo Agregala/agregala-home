@@ -1,4 +1,4 @@
-<img src="img/logo.png" align="center" width="50%" />
+<img src="img/logo.png" align="right" width="50%" />
 
 # Agrega.la (http://agrega.la)
 > Plataforma digital libre y abierta
