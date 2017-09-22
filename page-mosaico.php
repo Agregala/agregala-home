@@ -6,7 +6,7 @@
         <title>mosaico</title> 
         <link rel="stylesheet" type="text/css" href="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/css/style.css" />
-		<script type="text/javascript" src="mosaico/js/modernizr.custom.26633.js"></script>
+		<script type="text/javascript" src="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/js/modernizr.custom.26633.js"></script>
 		<noscript>
 			<link rel="stylesheet" type="text/css" href="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/css/fallback.css" />
 		</noscript>
