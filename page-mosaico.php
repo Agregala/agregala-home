@@ -4,14 +4,14 @@
 		<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <title>mosaico</title> 
-        <link rel="stylesheet" type="text/css" href="mosaico/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="mosaico/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/css/style.css" />
 		<script type="text/javascript" src="mosaico/js/modernizr.custom.26633.js"></script>
 		<noscript>
-			<link rel="stylesheet" type="text/css" href="mosaico/css/fallback.css" />
+			<link rel="stylesheet" type="text/css" href="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/css/fallback.css" />
 		</noscript>
 		<!--[if lt IE 9]>
-			<link rel="stylesheet" type="text/css" href="mosaico/css/fallback.css" />
+			<link rel="stylesheet" type="text/css" href="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/css/fallback.css" />
 		<![endif]-->
     </head>
     <body>
@@ -22,7 +22,7 @@
 			<section class="main">
 
 				<div id="ri-grid" class="ri-grid ri-grid-size-3">
-					<img class="ri-loading-image" src="mosaico/images/loading.gif"/>
+					<img class="ri-loading-image" src="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/images/loading.gif"/>
 					<ul>
 						<?php 
                             $json = file_get_contents('http://agrega.la/api/');
@@ -57,7 +57,7 @@
 			
         </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script type="text/javascript" src="mosaico/js/jquery.gridrotator.js"></script>
+		<script type="text/javascript" src="http://agrega.la/wp-content/themes/agrega.la-home/mosaico/js/jquery.gridrotator.js"></script>
 		<script type="text/javascript">	
             $( document ).ready(function() {
 			$(function() {
