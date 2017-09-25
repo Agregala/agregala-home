@@ -507,3 +507,9 @@ body #cdawrap .carbon-text {
 .numerologia section h2 {
     color: #656768;
 }
+.odometer-inside {
+    width: 200px;
+}
+.escondido {
+    display: none !important;
+}

@@ -1623,3 +1623,7 @@ select#myselect option[label="mesomexico"] {
 .entrrar-site:hover{
   background: #fdd300 !important;
 }
+
+.escondido {
+    display: none !important;
+}

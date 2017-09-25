@@ -17,9 +17,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/odometer.min.js"></script>
     <script>
-      setTimeout(function(){
-        $('.odometer').html(423234234);
-      }, 1000);
+        setTimeout(function(){
+            var reg = $('#reg').val();
+            $('#regionesTotales').html(reg);
+            var reg = $('#colec').val();
+            $('#colectivosTotales').html(reg);
+        }, 1000);
     </script>
 </head>
 
@@ -33,10 +36,36 @@
                     <div class="container">
                         <div class="row">
                             <div class="numerologia text-center">
+                                <?php
+                                    global $wpdb; // var global para hacer queries
                                 
+                                    $blogs = get_last_updated(); // listar todos los hijos del multisitio
+                                    $totalColectivos = 0;
+                                    $totalPosts = 0;
+                                    $totalsitios = 0;
+                                    foreach ($blogs AS $blog)
+                                    {   
+                                        ++$totalsitios;
+                                    }
+                                    /** recorrido para colectivos **/
+                                    $argsta = array(
+                                        'orderby'            => 'name',
+                                        'order'              => 'ASC',
+                                        'parent'             => 0
+                                    );
+
+                                    $categoriesrt = get_categories( $argsta );
+                                    foreach( $categoriesrt as $categoryy ) 
+                                    {
+                                        $totalColectivos = $totalColectivos+1;
+                                    }
+                                    // end total de colectivo
+                                    restore_current_blog(); // fin del recorrido de los sitios del multisitio 
+                                ?>
                                 <section id="content">
                                     <h2>Regiones agregadas</h2>
                                     <div id="regionesTotales" class="odometer">00</div>
+                                    <input class="escondido" name="reg" id="reg" value="<?php echo $totalsitios;?>" />
                                 </section>
 
                                 <section id="middle">
@@ -47,6 +76,7 @@
                                 <section id="sidebar">
                                     <h2>Colectivos agregados</h2>
                                     <div id="colectivosTotales" class="odometer">00</div>
+                                    <input class="escondido" name="colec" id="colec" value="<?php echo $totalColectivos;?>" />
                                 </section>
                                 
                             </div>
