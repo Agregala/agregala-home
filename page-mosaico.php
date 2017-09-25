@@ -135,11 +135,10 @@
                         $ide = $blog_details->blog_id;
                         $url_site = $blog_details->siteurl;
                         $args = array(
-                            'orderby'          => ID,
-                            'order'            => 'DESC',
+                            'orderby'          => 'rand',
                             'post_type'        => 'attachment',
                             'post_status'      => 'inherit',
-                            'numberposts'      => 24
+                            'numberposts'      => 32
                         );
                         $lastposts = get_posts($args); //obtener los posts del sitio hijo
                        
@@ -156,12 +155,12 @@
                             ) );
                             $contador_posts ++;
                             //echo $featured_img_url = get_post_meta( $posty, 'syndication_permalink', true );
-                            if( ($url_meta != "") and ($contador_posts<25) )
+                            if( ($url_meta != "") and ($contador_posts<32) )
                             {
                                 $generaUrl = "http://agrega.la/wp-content/uploads/sites/".$blog["blog_id"]."\/".$url_meta;
                             ?>
                             <div class="grid__item" data-size="1280x857">
-                                <a href="<?php echo $generaUrl; ?>" class="img-wrap"><img src="<?php echo $generaUrl; ?>" alt="img06" />
+                                <a href="<?php echo $generaUrl; ?>" class="img-wrap"><img src="<?php echo $generaUrl; ?>" alt="image noticia" />
                                     <div class="description description--grid">
                                         <h3>Título</h3>
                                         <p>resumen <em>&mdash; Gsitio</em></p>
