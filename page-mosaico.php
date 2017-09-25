@@ -29,10 +29,10 @@
             var reg = "100";
             $('#regionesTotales').html(reg);
             
-            var post = = "900";
+            var post = "900";
             $('#noticiasTotales').html(post);
             
-            var colec = = "1100";
+            var colec = "1100";
             $('#colectivosTotales').html(colec);
         }, 1000);
     </script>
