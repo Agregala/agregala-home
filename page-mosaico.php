@@ -20,7 +20,7 @@
     <script>
         $( document ).ready(function() {
             $.getJSON('http://agrega.la/api', function(data) {
-                var json = JSON.parse(data);
+                var json = jQuery.parseJSON(JSON.stringify(data));
                 console.log(json);
             });
         });
