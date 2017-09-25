@@ -205,10 +205,10 @@
                 <div class="container-temario-interno">
                     <h2>Sitios <span>agregados:</span></h2>
                     <div class="cotainer-sitios">
-                        <div><p>Río de Janiro <a href="http://agrega.la/rio" target="_blank"><span>agrega.la/rio</span></a></p></div>
-                        <div><p>Caribe Colombiano <a href="http://agrega.la/caribe" target="_blank"><span>agrega.la/caribe</span></a></p></div>
-                        <div><p>Rosario, Argentina <a href="http://agrega.la/rosario" target="_blank"><span>agrega.la/rosario</span></a></p></div>
-                        <div><p>MESOMÉXICO <a href="http://agrega.la/mesomexico" target="_blank"><span>agrega.la/mesomexico</span></a></p></div>
+                        <p>Río de Janiro <a href="http://agrega.la/rio" target="_blank"><span>agrega.la/rio</span></a></p>
+                        <p>Caribe Colombiano <a href="http://agrega.la/caribe" target="_blank"><span>agrega.la/caribe</span></a></p>
+                        <p>Rosario, Argentina <a href="http://agrega.la/rosario" target="_blank"><span>agrega.la/rosario</span></a></p>
+                        <p>MESOMÉXICO <a href="http://agrega.la/mesomexico" target="_blank"><span>agrega.la/mesomexico</span></a></p>
                     </div>
                 </div>
             </div>
