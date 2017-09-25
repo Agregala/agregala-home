@@ -8,6 +8,11 @@
     $nestedData     = array();
     $json_data      = array();
 
+    $totalColectivos = 0;
+    $total_osts = 0;
+    $totalsitios = 0;
+    $post_count = 0;
+
     foreach ($blogs AS $blog)
     {   
         switch_to_blog($blog["blog_id"]);
@@ -16,7 +21,35 @@
         
         if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
         {
-            //echo $blog_details->blog_id."<br>";
+            $post_count += $blog_details->post_count;
+            $totalsitios++;
+            // get_categories args
+            $args = array(
+                'hide_empty' => true
+            );
+
+            $categories = get_categories( $args );
+
+            foreach ( $categories as $category ) {
+                $totalColectivos++;
+            }
+            // end categories
+
+            $args = array(
+                'orderby'          => ID,
+                'order'            => 'DESC',
+                'post_type'        => 'attachment',
+                'post_status'      => 'inherit',
+                'numberposts'      => -1
+            );
+            $lastposts = get_posts($args); //obtener los posts del sitio hijo
+
+            /** recorrido para indexar posts **/
+            foreach($lastposts as $post) :
+                $meta_key = get_the_ID();
+                $total_osts++;
+            endforeach;
+            
             $ide = $blog_details->blog_id;
             $url_site = $blog_details->siteurl;
             $args = array(
@@ -77,5 +110,11 @@
         restore_current_blog(); // fin del recorrido de los sitios del multisitio 
     }
     /** crear json final **/
+    $json_data[] = array(
+        "totalNot"       => $post_count,
+        "totalSit"       => $totalsitios,
+        "totalCol"       => $totalColectivos
+    );
+
     echo json_encode($json_data);  // send data as json format
 ?>
