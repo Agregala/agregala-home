@@ -68,7 +68,8 @@
                                             }
                                             // end categories
                                             
-                                            
+                                            $args['post_status'] = 'publish';
+                                            $total_posts = count( get_posts( $args ) );
                                         }  
                                     }
                                     
@@ -84,7 +85,7 @@
                                 <section id="middle">
                                     <h2>Número de noticas</h2>
                                     <div id="noticiasTotales" class="odometer">00</div>
-                                    <input class="escondido" name="post" id="post" value="<?php echo $totalPosts;?>" />
+                                    <input class="escondido" name="post" id="post" value="<?php echo $total_posts;?>" />
                                 </section>
 
                                 <section id="sidebar">
