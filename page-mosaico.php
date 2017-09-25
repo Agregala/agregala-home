@@ -19,10 +19,9 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
     <script>
         $( document ).ready(function() {
-            console.log( "ready!" );
             $.getJSON('http://agrega.la/api', function(data) {
                 var json = JSON.parse(data);
-                console.log(json.totalCol);
+                console.log(json);
             });
         });
         
