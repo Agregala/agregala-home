@@ -116,14 +116,11 @@
                 <!-- Obtener posts -->
                 <?php
                 wp_reset_query();
+                wp_reset_postdata();
+                rewind_posts();
                 global $wpdb; // var global para hacer queries
-                wp_reset_query();
+                
                 $blogs          = get_last_updated(); // listar todos los hijos del multisitio
-                $data           = array();
-                $dataCate       = array();
-                $nestedDataCate = array();
-                $nestedData     = array();
-                $json_data      = array();
 
                 foreach ($blogs AS $blog)
                 {   
@@ -137,7 +134,7 @@
                         $url_site = $blog_details->siteurl;
                         $args = array(
                             'orderby'          => ID,
-                            'order'            => 'ASC',
+                            'order'            => 'DESC',
                             'post_type'        => 'attachment',
                             'post_status'      => 'inherit',
                             'numberposts'      => 24
@@ -182,8 +179,6 @@
                     }
                     restore_current_blog(); // fin del recorrido de los sitios del multisitio 
                 }
-                /** crear json final **/
-                echo json_encode($json_data);  // send data as json format
             ?>
                 <!-- end posts -->
 			</div>
