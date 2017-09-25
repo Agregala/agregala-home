@@ -18,9 +18,13 @@
     <script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/odometer.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
     <script>
-        $.getJSON('http://agrega.la/api', function(data) {
-            console.log(data);
+        $( document ).ready(function() {
+            console.log( "ready!" );
+            $.getJSON('http://agrega.la/api', function(data) {
+                console.log(data);
+            });
         });
+        
         setTimeout(function(){
             var reg = "100";
             $('#regionesTotales').html(reg);
