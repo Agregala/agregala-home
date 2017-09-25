@@ -157,8 +157,8 @@
                             //echo $featured_img_url = get_post_meta( $posty, 'syndication_permalink', true );
                             if( ($url_meta != "") and ($contador_posts<33) )
                             {
-                                //$generaUrl = "http://agrega.la/wp-content/uploads/sites/".$blog["blog_id"]."\/".$url_meta;
-                                $generaUrl = "http://agrega.la/wp-content/uploads/sites/5\/2017/09/fb_image_tmp-32391.jpg";
+                                $generaUrl = "http://agrega.la/wp-content/uploads/sites/".$blog["blog_id"]."\/".$url_meta;
+                                //$generaUrl = "http://agrega.la/wp-content/uploads/sites/5\/2017/09/fb_image_tmp-32391.jpg";
                             ?>
                             <div class="grid__item" data-size="1280x857">
                                 <div class="overlay"></div>
