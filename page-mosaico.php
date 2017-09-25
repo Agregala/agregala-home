@@ -45,19 +45,18 @@
                                     $totalsitios = 0;
                                     foreach ($blogs AS $blog)
                                     {   
-                                        ++$totalsitios;
+                                        $totalsitios++;
                                     }
+                                    $totalsitios = $totalsitios-1;
                                     /** recorrido para colectivos **/
-                                    $argsta = array(
-                                        'orderby'            => 'name',
-                                        'order'              => 'ASC',
-                                        'parent'             => 0
-                                    );
 
-                                    $categoriesrt = get_categories( $argsta );
-                                    foreach( $categoriesrt as $categoryy ) 
+                                    $categories = get_categories( array(
+                                        'orderby' => 'name',
+                                        'order'   => 'ASC'
+                                    ) );
+                                    foreach( $categories as $category ) 
                                     {
-                                        $totalColectivos = $totalColectivos+1;
+                                        $totalColectivos++;
                                     }
                                     // end total de colectivo
                                     restore_current_blog(); // fin del recorrido de los sitios del multisitio 
