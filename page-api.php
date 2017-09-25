@@ -36,7 +36,6 @@
             // end categories
 
             $args = array(
-                'orderby'          => ID,
                 'order'            => 'DESC',
                 'post_type'        => 'attachment',
                 'post_status'      => 'inherit',
@@ -53,7 +52,6 @@
             $ide = $blog_details->blog_id;
             $url_site = $blog_details->siteurl;
             $args = array(
-                'orderby'          => ID,
                 'order'            => 'DESC',
                 'post_type'        => 'attachment',
                 'post_status'      => 'inherit',
