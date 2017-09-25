@@ -45,7 +45,7 @@
                                 
                                     $blogs = get_last_updated(); // listar todos los hijos del multisitio
                                     $totalColectivos = 0;
-                                    $totalPosts = 0;
+                                    $total_osts = 0;
                                     $totalsitios = 0;
                                     foreach ($blogs AS $blog)
                                     {   
@@ -69,7 +69,10 @@
                                             // end categories
                                             
                                             $args['post_status'] = 'publish';
-                                            $total_posts = count( get_posts( $args ) );
+                                            $total_posts = get_posts( $args );
+                                            foreach ( $total_posts as $posts ) {
+                                                $total_osts++;
+                                            }
                                         }  
                                     }
                                     
@@ -85,7 +88,7 @@
                                 <section id="middle">
                                     <h2>Número de noticas</h2>
                                     <div id="noticiasTotales" class="odometer">00</div>
-                                    <input class="escondido" name="post" id="post" value="<?php echo $total_posts;?>" />
+                                    <input class="escondido" name="post" id="post" value="<?php echo $total_osts;?>" />
                                 </section>
 
                                 <section id="sidebar">
