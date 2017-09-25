@@ -120,9 +120,11 @@
                 rewind_posts();
                 global $wpdb; // var global para hacer queries
                 
-                $blogs          = get_last_updated(); // listar todos los hijos del multisitio
+                $contador_posts = 0;
+                
+                $blogsie = get_last_updated(); // listar todos los hijos del multisitio
 
-                foreach ($blogs AS $blog)
+                foreach ($blogsie AS $blog)
                 {   
                     switch_to_blog($blog["blog_id"]);
 
@@ -140,7 +142,7 @@
                             'numberposts'      => 24
                         );
                         $lastposts = get_posts($args); //obtener los posts del sitio hijo
-
+                       
                         /** recorrido para indexar posts **/
                         foreach($lastposts as $post) :
                             $meta_key = get_the_ID();
@@ -152,8 +154,9 @@
                                 ", 
                                 $meta_key
                             ) );
+                            $contador_posts ++;
                             //echo $featured_img_url = get_post_meta( $posty, 'syndication_permalink', true );
-                            if($url_meta != "")
+                            if( ($url_meta != "") and ($contador_posts<25) )
                             {
                                 $generaUrl = "http://agrega.la/wp-content/uploads/sites/".$blog["blog_id"]."\/".$url_meta;
                             ?>
