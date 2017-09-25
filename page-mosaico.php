@@ -157,9 +157,8 @@
                             //echo $featured_img_url = get_post_meta( $posty, 'syndication_permalink', true );
                             if($url_meta != "")
                             {
-                                //$url_site.
-                                //echo $meta_key.esc_url_raw($generaUrl)."<br>";
-                                // aqui va el loop
+                                $generaUrl = "http://agrega.la/wp-content/uploads/sites/".$blog["blog_id"]."\/".$url_meta;
+                                echo $generaUrl."<br>";
                             }
                         endforeach;
                     }
