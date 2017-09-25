@@ -10,12 +10,13 @@
 	<meta name="keywords" content="agrega.la, voces, comunitarias, medios, medios independientes, noticias, blog, facebook, twitter, rss" />
 	<meta name="author" content="Team Agrega.la" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+	
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/css/style2.css" />
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/modernizr-custom.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/odometer.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
     <script>
         setTimeout(function(){
             var reg = $('#reg').val();
@@ -47,6 +48,7 @@
                                     $totalColectivos = 0;
                                     $total_osts = 0;
                                     $totalsitios = 0;
+                                    $post_count = 0;
                                     foreach ($blogs AS $blog)
                                     {   
                                         switch_to_blog($blog["blog_id"]);
@@ -55,6 +57,7 @@
                                         
                                         if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
                                         {
+                                            $post_count += $blog_details->post_count;
                                             $totalsitios++;
                                             // get_categories args
                                             $args = array(
@@ -97,7 +100,7 @@
                                 <section id="middle">
                                     <h2>Número de noticas</h2>
                                     <div id="noticiasTotales" class="odometer">00</div>
-                                    <input class="escondido" name="post" id="post" value="<?php echo $total_osts;?>" />
+                                    <input class="escondido" name="post" id="post" value="<?php echo $post_count;?>" />
                                 </section>
 
                                 <section id="sidebar">
@@ -129,13 +132,15 @@
                     switch_to_blog($blog["blog_id"]);
 
                     $blog_details = get_blog_details($blog["blog_id"]);
+                    
+                    
                     if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
                     {
                         //echo $blog_details->blog_id."<br>";
                         $ide = $blog_details->blog_id;
                         $url_site = $blog_details->siteurl;
+                        $blogname = $blog_details->blogname;
                         $args = array(
-                            //'orderby'          => 'rand',
                             'orderby'          => ID,
                             'order'            => 'DESC',
                             'post_type'        => 'attachment',
@@ -166,8 +171,8 @@
                                 <div class="overlay"></div>
                                 <a href="<?php echo $generaUrl; ?>" class="img-wrap"><img src="<?php echo $generaUrl; ?>" alt="image noticia" />
                                     <div class="description description--grid">
-                                        <h3>Título</h3>
-                                        <p>resumen <em>&mdash; Gsitio</em></p>
+                                        <h3><?php the_title(); ?></h3>
+                                        <p><?php echo $url_site; ?> <em>&mdash; <?php echo $blogname;?></em></p>
                                         <div class="details">
                                             <ul>
                                                 <li><i class="icon icon-camera"></i><span>Canon PowerShot S95</span></li>

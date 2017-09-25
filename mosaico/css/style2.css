@@ -1,3 +1,15 @@
+/*Fonts*/
+@font-face {
+    font-family: 'camera-icons';
+    src: url('../fonts/camera-icons/camera-icons.eot');
+    src: url('../fonts/camera-icons/camera-icons.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/camera-icons/camera-icons.woff') format('woff'),
+         url('../fonts/camera-icons/camera-icons.ttf') format('truetype'),
+         url('.../fonts/camera-icons/camera-icons.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 .grid {
 	position: relative;
 	margin: 0 auto;
@@ -347,7 +359,7 @@ header h1 {
 }
 
 .preview--image-loaded .action--close {
-	opacity: 0;
+	opacity: 1;
 	-webkit-transform: scale3d(1, 1, 1);
 	transform: scale3d(1, 1, 1);
 }
@@ -372,4 +384,7 @@ header h1 {
 	.details {
 		display: none;
 	}
+}
+.fa {
+    font-size: 40px !important;
 }
