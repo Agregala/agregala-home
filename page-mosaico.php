@@ -68,18 +68,7 @@
                                             }
                                             // end categories
                                             
-                                            //total de posts
-                                            $argst = array(
-                                                'orderby'          => ID,
-                                                'order'            => 'DESC',
-                                                'post_status'      => 'publish',
-                                                'numberposts'      => -1
-                                            );
-                                            $lastpostst = get_posts($argst); //obtener los posts del sitio hijo
-                                            /** recorrido para indexar posts **/
-                                            foreach ( $lastpostst as $postt ) {
-                                                $totalPosts++;
-                                            }
+                                            
                                         }  
                                     }
                                     
