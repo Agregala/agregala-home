@@ -10,7 +10,7 @@
 
     $totalColectivos = 0;
     $totalPosts = 0;
-    $totalsitios = 0;
+    $totalsitios = 1;
 
     foreach ($blogs AS $blog)
     {   
@@ -19,23 +19,40 @@
         $blog_details = get_blog_details($blog["blog_id"]);
         
         $totalsitios = $totalsitios+1;
-        if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
-        {
-            //total de posts
-            $argst = array(
-                'orderby'          => ID,
-                'order'            => 'DESC',
-                'post_status'      => 'publish',
-                'numberposts'      => -1
+        
+        //total de posts
+        $argst = array(
+            'orderby'          => ID,
+            'order'            => 'DESC',
+            'post_status'      => 'publish',
+            'numberposts'      => -1
+        );
+        $lastpostst = get_posts($argst); //obtener los posts del sitio hijo
+
+        /** recorrido para indexar posts **/
+        foreach($lastpostst as $postt) :
+            $totalPosts = $totalPosts +1;
+        endforeach;
+        //end total de posts
+        
+        // total de colectivos
+        /** recorrido para colectivos **/
+            $args = array(
+                'orderby'            => 'name',
+                'order'              => 'ASC',
+                'parent'             => 0
             );
-            $lastpostst = get_posts($argst); //obtener los posts del sitio hijo
             
-            /** recorrido para indexar posts **/
-            foreach($lastpostst as $postt) :
-                $totalPosts = $totalPosts +1;
-            endforeach;
-            //end total de posts
-            
+            $categories = get_categories( $args );
+            foreach( $categories as $category ) 
+            {
+                $totalColectivos = $totalColectivos+1;
+            }
+        // end total de colectivo
+        
+        
+        if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
+        {   
             
             //echo $blog_details->blog_id."<br>";
             $ide = $blog_details->blog_id;
@@ -81,7 +98,6 @@
             $categories = get_categories( $args );
             foreach( $categories as $category ) 
             {
-                $totalColectivos = $totalColectivos+1;
                 $nestedDataCate['nombre_colectivo'] = esc_html( $category->name );
                 $nestedDataCate['desc_colectivo'] = esc_html( $category->description );
                 $nestedDataCate['slug_colectivo'] = esc_html( $category->slug );
