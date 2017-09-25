@@ -21,7 +21,22 @@
         $totalsitios = $totalsitios+1;
         if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
         {
-            $totalsitios = $totalsitios+1;
+            //total de posts
+            $argst = array(
+                'orderby'          => ID,
+                'order'            => 'DESC',
+                'post_status'      => 'publish',
+                'numberposts'      => -1
+            );
+            $lastpostst = get_posts($argst); //obtener los posts del sitio hijo
+            
+            /** recorrido para indexar posts **/
+            foreach($lastpostst as $postt) :
+                $totalPosts = $totalPosts +1;
+            endforeach;
+            //end total de posts
+            
+            
             //echo $blog_details->blog_id."<br>";
             $ide = $blog_details->blog_id;
             $url_site = $blog_details->siteurl;
@@ -66,6 +81,7 @@
             $categories = get_categories( $args );
             foreach( $categories as $category ) 
             {
+                $totalColectivos = $totalColectivos+1;
                 $nestedDataCate['nombre_colectivo'] = esc_html( $category->name );
                 $nestedDataCate['desc_colectivo'] = esc_html( $category->description );
                 $nestedDataCate['slug_colectivo'] = esc_html( $category->slug );
@@ -84,7 +100,9 @@
     }
     /** crear json final **/
     $json_data[] = array(
-        "totalSitio" => $totalsitios
+        "totalSitio" => $totalsitios,
+        "totalColectivos" => $totalColectivos,
+        "totalnoticias" => $totalPosts
     );
     echo json_encode($json_data);  // send data as json format
 ?>
