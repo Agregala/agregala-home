@@ -115,8 +115,9 @@
 			<div class="grid">
                 <!-- Obtener posts -->
                 <?php
+                wp_reset_query();
                 global $wpdb; // var global para hacer queries
-
+                wp_reset_query();
                 $blogs          = get_last_updated(); // listar todos los hijos del multisitio
                 $data           = array();
                 $dataCate       = array();
@@ -139,7 +140,7 @@
                             'order'            => 'ASC',
                             'post_type'        => 'attachment',
                             'post_status'      => 'inherit',
-                            'numberposts'      => 20
+                            'numberposts'      => 24
                         );
                         $lastposts = get_posts($args); //obtener los posts del sitio hijo
 
