@@ -23,7 +23,7 @@
                 var json = jQuery.parseJSON(JSON.stringify(data));
                 console.log(json.length);
                 var totoa = json.length-1;
-                console.log(json[totoa].id_image);
+                console.log(json[totoa]);
             });
         });
         
