@@ -20,8 +20,12 @@
         setTimeout(function(){
             var reg = $('#reg').val();
             $('#regionesTotales').html(reg);
-            var reg = $('#colec').val();
-            $('#colectivosTotales').html(reg);
+            
+            var post = $('#post').val();
+            $('#noticiasTotales').html(post);
+            
+            var colec = $('#colec').val();
+            $('#colectivosTotales').html(colec);
         }, 1000);
     </script>
 </head>
@@ -45,13 +49,13 @@
                                     $totalsitios = 0;
                                     foreach ($blogs AS $blog)
                                     {   
-                                        $totalsitios++;
                                         switch_to_blog($blog["blog_id"]);
                                         
                                         $blog_details = get_blog_details($blog["blog_id"]);
                                         
                                         if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
                                         {
+                                            $totalsitios++;
                                             // get_categories args
                                             $args = array(
                                                 'hide_empty' => true
@@ -62,6 +66,20 @@
                                             foreach ( $categories as $category ) {
                                                 $totalColectivos++;
                                             }
+                                            // end categories
+                                            
+                                            //total de posts
+                                            $argst = array(
+                                                'orderby'          => ID,
+                                                'order'            => 'DESC',
+                                                'post_status'      => 'publish',
+                                                'numberposts'      => -1
+                                            );
+                                            $lastpostst = get_posts($argst); //obtener los posts del sitio hijo
+                                            /** recorrido para indexar posts **/
+                                            foreach($lastpostst as $postt) :
+                                                $totalPosts = $totalPosts +1;
+                                            endforeach;
                                         }  
                                     }
                                     
@@ -77,6 +95,7 @@
                                 <section id="middle">
                                     <h2>Número de noticas</h2>
                                     <div id="noticiasTotales" class="odometer">00</div>
+                                    <input class="escondido" name="post" id="post" value="<?php echo $totalPosts;?>" />
                                 </section>
 
                                 <section id="sidebar">
