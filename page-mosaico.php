@@ -136,10 +136,10 @@
                         $url_site = $blog_details->siteurl;
                         $args = array(
                             'orderby'          => ID,
-                            'order'            => 'DESC',
+                            'order'            => 'ASC',
                             'post_type'        => 'attachment',
                             'post_status'      => 'inherit',
-                            'numberposts'      => 40
+                            'numberposts'      => 20
                         );
                         $lastposts = get_posts($args); //obtener los posts del sitio hijo
 
