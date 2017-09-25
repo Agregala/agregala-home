@@ -77,9 +77,9 @@
                                             );
                                             $lastpostst = get_posts($argst); //obtener los posts del sitio hijo
                                             /** recorrido para indexar posts **/
-                                            foreach($lastpostst as $postt) :
-                                                $totalPosts = $totalPosts +1;
-                                            endforeach;
+                                            foreach ( $lastpostst as $postt ) {
+                                                $totalPosts++;
+                                            }
                                         }  
                                     }
                                     
