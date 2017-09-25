@@ -21,7 +21,8 @@
         $( document ).ready(function() {
             console.log( "ready!" );
             $.getJSON('http://agrega.la/api', function(data) {
-                console.log(data->totalCol);
+                var json = JSON.parse(data);
+                console.log(json.totalCol);
             });
         });
         
