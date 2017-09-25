@@ -23,20 +23,18 @@
                 var json = jQuery.parseJSON(JSON.stringify(data));
                 console.log(json.length);
                 var totoa = json.length-1;
-                console.log(json[totoa]);
+                setTimeout(function(){
+                    var reg = json[totoa].totalSit;
+                    $('#regionesTotales').html(reg);
+
+                    var post = json[totoa].totalNot;
+                    $('#noticiasTotales').html(post);
+
+                    var colec = json[totoa].totalCol;
+                    $('#colectivosTotales').html(colec);
+                }, 1000);
             });
         });
-        
-        setTimeout(function(){
-            var reg = "100";
-            $('#regionesTotales').html(reg);
-            
-            var post = "900";
-            $('#noticiasTotales').html(post);
-            
-            var colec = "1100";
-            $('#colectivosTotales').html(colec);
-        }, 1000);
     </script>
 </head>
 
