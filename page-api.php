@@ -8,14 +8,20 @@
     $nestedData     = array();
     $json_data      = array();
 
+    $totalColectivos = 0;
+    $totalPosts = 0;
+    $totalsitios = 0;
+
     foreach ($blogs AS $blog)
     {   
         switch_to_blog($blog["blog_id"]);
         
         $blog_details = get_blog_details($blog["blog_id"]);
         
+        $totalsitios = $totalsitios+1;
         if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
         {
+            $totalsitios = $totalsitios+1;
             //echo $blog_details->blog_id."<br>";
             $ide = $blog_details->blog_id;
             $url_site = $blog_details->siteurl;
@@ -77,5 +83,8 @@
         restore_current_blog(); // fin del recorrido de los sitios del multisitio 
     }
     /** crear json final **/
+    $json_data[] = array(
+        "totalSitio" => $totalsitios
+    );
     echo json_encode($json_data);  // send data as json format
 ?>

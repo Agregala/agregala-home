@@ -6,14 +6,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Agrega.la | mosaico</title>
-	<meta name="description" content="Effect inspiration for opening an image grid item." />
-	<meta name="keywords" content="image grid, effect, inspiration, css, javascript, animation, masonry" />
-	<meta name="author" content="Codrops" />
+	<meta name="description" content="Contando voces comunitarias" />
+	<meta name="keywords" content="agrega.la, voces, comunitarias, medios, medios independientes, noticias, blog, facebook, twitter, rss" />
+	<meta name="author" content="Team Agrega.la" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/css/style2.css" />
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/modernizr-custom.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/odometer.min.js"></script>
+    <script>
+      setTimeout(function(){
+        $('.odometer').html(423234234);
+      }, 1000);
+    </script>
 </head>
 
 <body class="demo-2">
@@ -21,7 +28,32 @@
 		<div class="content">
             <header>
                 <img class="logo-header" src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/img/logo.png" alt="Logo agregala"/>
-                <h1>Agrega.la es una plataforma digital libre y abierta que reúne y difunde los contenidos de medios de comunicación independientes y de colectivos de diferentes puntos de Latinoamérica. </h1>
+                <h1>Contando voces comunitarias</h1>
+                <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="numerologia text-center">
+                                
+                                <section id="content">
+                                    <h2>Regiones agregadas</h2>
+                                    <div id="regionesTotales" class="odometer">00</div>
+                                </section>
+
+                                <section id="middle">
+                                    <h2>Número de noticas</h2>
+                                    <div id="noticiasTotales" class="odometer">00</div>
+                                </section>
+
+                                <section id="sidebar">
+                                    <h2>Colectivos agregados</h2>
+                                    <div id="colectivosTotales" class="odometer">00</div>
+                                </section>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </header>
 			<div class="grid">
                 <!-- Obtener posts -->
