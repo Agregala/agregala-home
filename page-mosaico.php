@@ -46,18 +46,25 @@
                                     foreach ($blogs AS $blog)
                                     {   
                                         $totalsitios++;
-                                    }
-                                    $totalsitios = $totalsitios-1;
-                                    /** recorrido para colectivos **/
+                                        switch_to_blog($blog["blog_id"]);
+                                        
+                                        $blog_details = get_blog_details($blog["blog_id"]);
+                                        
+                                        if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
+                                        {
+                                            // get_categories args
+                                            $args = array(
+                                                'hide_empty' => true
+                                            );
 
-                                    $categories = get_categories( array(
-                                        'orderby' => 'name',
-                                        'order'   => 'ASC'
-                                    ) );
-                                    foreach( $categories as $category ) 
-                                    {
-                                        $totalColectivos++;
+                                            $categories = get_categories( $args );
+
+                                            foreach ( $categories as $category ) {
+                                                $totalColectivos++;
+                                            }
+                                        }  
                                     }
+                                    
                                     // end total de colectivo
                                     restore_current_blog(); // fin del recorrido de los sitios del multisitio 
                                 ?>
