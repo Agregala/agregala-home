@@ -18,14 +18,17 @@
     <script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/odometer.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
     <script>
+        $.getJSON('http://agrega.la/api', function(data) {
+            console.log(data);
+        });
         setTimeout(function(){
-            var reg = $('#reg').val();
+            var reg = "100";
             $('#regionesTotales').html(reg);
             
-            var post = $('#post').val();
+            var post = = "900";
             $('#noticiasTotales').html(post);
             
-            var colec = $('#colec').val();
+            var colec = = "1100";
             $('#colectivosTotales').html(colec);
         }, 1000);
     </script>
@@ -41,72 +44,20 @@
                     <div class="container">
                         <div class="row">
                             <div class="numerologia text-center">
-                                <?php
-                                    global $wpdb; // var global para hacer queries
-                                
-                                    $blogs = get_last_updated(); // listar todos los hijos del multisitio
-                                    $totalColectivos = 0;
-                                    $total_osts = 0;
-                                    $totalsitios = 0;
-                                    $post_count = 0;
-                                    foreach ($blogs AS $blog)
-                                    {   
-                                        switch_to_blog($blog["blog_id"]);
-                                        
-                                        $blog_details = get_blog_details($blog["blog_id"]);
-                                        
-                                        if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
-                                        {
-                                            $post_count += $blog_details->post_count;
-                                            $totalsitios++;
-                                            // get_categories args
-                                            $args = array(
-                                                'hide_empty' => true
-                                            );
-
-                                            $categories = get_categories( $args );
-
-                                            foreach ( $categories as $category ) {
-                                                $totalColectivos++;
-                                            }
-                                            // end categories
-                                            
-                                            $args = array(
-                                                'orderby'          => ID,
-                                                'order'            => 'DESC',
-                                                'post_type'        => 'attachment',
-                                                'post_status'      => 'inherit',
-                                                'numberposts'      => -1
-                                            );
-                                            $lastposts = get_posts($args); //obtener los posts del sitio hijo
-
-                                            /** recorrido para indexar posts **/
-                                            foreach($lastposts as $post) :
-                                                $meta_key = get_the_ID();
-                                                $total_osts++;
-                                            endforeach;
-                                        }  
-                                    }
-                                    
-                                    // end total de colectivo
-                                    restore_current_blog(); // fin del recorrido de los sitios del multisitio 
-                                ?>
+                            
                                 <section id="content">
                                     <h2>Regiones agregadas</h2>
                                     <div id="regionesTotales" class="odometer">00</div>
-                                    <input class="escondido" name="reg" id="reg" value="<?php echo $totalsitios;?>" />
                                 </section>
 
                                 <section id="middle">
                                     <h2>Número de noticas</h2>
                                     <div id="noticiasTotales" class="odometer">00</div>
-                                    <input class="escondido" name="post" id="post" value="<?php echo $post_count;?>" />
                                 </section>
 
                                 <section id="sidebar">
                                     <h2>Colectivos agregados</h2>
                                     <div id="colectivosTotales" class="odometer">00</div>
-                                    <input class="escondido" name="colec" id="colec" value="<?php echo $totalColectivos;?>" />
                                 </section>
                                 
                             </div>
