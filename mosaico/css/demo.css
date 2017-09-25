@@ -540,3 +540,9 @@ body #cdawrap .carbon-text {
     width: 100px;
     }
 }
+.cotainer-sitios p{
+       text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+}
