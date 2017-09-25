@@ -21,7 +21,9 @@
         $( document ).ready(function() {
             $.getJSON('http://agrega.la/api', function(data) {
                 var json = jQuery.parseJSON(JSON.stringify(data));
-                console.log(json);
+                console.log(json.length);
+                var totoa = json.length-1;
+                console.log(json[totoa].id_image);
             });
         });
         
