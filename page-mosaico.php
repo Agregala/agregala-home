@@ -68,11 +68,20 @@
                                             }
                                             // end categories
                                             
-                                            $args['post_status'] = 'publish';
-                                            $total_posts = get_posts( $args );
-                                            foreach ( $total_posts as $posts ) {
+                                            $args = array(
+                                                'orderby'          => ID,
+                                                'order'            => 'DESC',
+                                                'post_type'        => 'attachment',
+                                                'post_status'      => 'inherit',
+                                                'numberposts'      => -1
+                                            );
+                                            $lastposts = get_posts($args); //obtener los posts del sitio hijo
+
+                                            /** recorrido para indexar posts **/
+                                            foreach($lastposts as $post) :
+                                                $meta_key = get_the_ID();
                                                 $total_osts++;
-                                            }
+                                            endforeach;
                                         }  
                                     }
                                     
