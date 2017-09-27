@@ -10,9 +10,9 @@ La plataforma tecnológica Agrega.la - http://agrega.la - funciona con una insta
 Los nuevos sitios / blogs creados, a partir de un recorte geográfico o temático, funcionarán como un sitio/blog dentro del Wordpress-MU. Por ejemplo, el sitio http://agrega.la/rio/ es el capítulo de Río de Janeiro dentro de Agrega.la.
 
 Este repositorio GIT está organizado de la siguiente manera:
-1- Repositorio del sitio (raíz) Agregación: Template Wordpress-MU personalizado: https://github.com/Agregala/agregala-home
-2- Repositorio del Template Wordpress personalizado de los sitios / capítulos locales: https://github.com/Agregala/agregala-site
-3- -Repositorio del Plugin Facebook a Wordpress: https://github.com/Agregala/egany_facebook_to_wordpress
+* Repositorio del sitio (raíz) Agregación: Template Wordpress-MU personalizado: https://github.com/Agregala/agregala-home
+* Repositorio del Template Wordpress personalizado de los sitios / capítulos locales: https://github.com/Agregala/agregala-site
+* Repositorio del Plugin Facebook a Wordpress: https://github.com/Agregala/egany_facebook_to_wordpress
 
 
 ## Objectivos del Proyecto
