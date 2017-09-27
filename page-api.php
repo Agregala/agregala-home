@@ -19,8 +19,8 @@
         {
             //echo $blog_details->blog_id."<br>";
             $blogname = $blog_details->blogname;
-            $nombre = strtolower($blogname);
-            $url = "http://agrega.la/".$nombre."/?fb2wp_type=all"
+            
+            $url = "http://agrega.la/".$blogname."/?fb2wp_type=all"
             echo $url."<br>";
 
         }
