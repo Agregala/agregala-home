@@ -9,7 +9,7 @@
     <meta name="description" content="<?php echo get_option('fullby_description'); ?>" />
     
     <!-- Favicon -->
-    <link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.png" type="image/x-icon"> 
+    <link rel="icon" href="http://agrega.la/wp-content/themes/agregala-site/img/favicon.png" type="image/x-icon">
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
