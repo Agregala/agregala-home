@@ -311,7 +311,7 @@ add_filter('get_the_excerpt', 'keep_my_links');
 function actualizar_red() {
     do_action('actualizar_red');
 }
-function output_text() {
+function loop_actualizar_red() {
     echo '<p>Your text.</p>';
 }
  
