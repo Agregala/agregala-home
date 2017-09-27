@@ -328,14 +328,7 @@ function loop_actualizar_red() {
             //echo $blog_details->blog_id."<br>";
             $blogname = $blog_details->blogname;
             $url = "http://agrega.la/".$blogname."/?fb2wp_type=all"
-            $.ajax({
-                type: "GET",
-                url: "action.php?",
-                data: "me=" + me,
-                success: function (data) {
-                    alert(data);
-                }
-            });
+            return $url."<br>";
         }
     }
     restore_current_blog(); // fin del recorrido de los sitios del multisitio 
