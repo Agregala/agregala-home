@@ -3,11 +3,19 @@
 # Agrega.la (http://agrega.la)
 
 ## Resumen
-Agrega.la es una red presente en Brasil, Argentina, Colombia y México, que tiene como objetivo promover la visibilización de contenidos y acciones entre medios independientes, libres o comunitarios. Su plataforma digital constantemente hace copias de los posts publicados en Facebook (FB) de todos los grupos registrados; así reúne sus contenidos en un mismo espacio común y realiza continuamente una migración de datos de una plataforma cerrada y privativa para otra abierta y libre. En ella los usuarios que no tienen registro en FB pueden acceder a los contenidos de los medios libres. Además, Agrega.la también reúne contenidos de blogs por medio de RSS y Twitter. 
--WP – explicar 
--Plugin - explicar
+Agrega.la es una red presente en Brasil, Argentina, Colombia y México, que tiene como objetivo promover la visibilización de contenidos y acciones entre medios independientes, libres o comunitarios. Su plataforma digital constantemente hace copias de los posts publicados en Facebook (FB) de todos los grupos registrados; así reúne sus contenidos en un mismo espacio común y realiza continuamente una migración de datos de una plataforma cerrada y privativa para otra abierta y libre. En ella los usuarios que no tienen registro en FB pueden acceder a los contenidos de los medios libres. Además, Agrega.la también reúne contenidos de blogs por medio de RSS y Twitter.
 
-## Objectivos
+La plataforma tecnológica Agrega.la - http://agrega.la - funciona con una instalación de Wordpress-MU (multisite) con un template personalizado y un Plugin programado para extraer contenidos públicos de páginas y grupos de Facebook, que también debe instalarse.
+
+Los nuevos sitios / blogs creados, a partir de un recorte geográfico o temático, funcionarán como un sitio/blog dentro del Wordpress-MU. Por ejemplo, el sitio http://agrega.la/rio/ es el capítulo de Río de Janeiro dentro de Agrega.la.
+
+Este repositorio GIT está organizado de la siguiente manera:
+1- Repositorio del sitio (raíz) Agregación: Template Wordpress-MU personalizado: https://github.com/Agregala/agregala-home
+2- Repositorio del Template Wordpress personalizado de los sitios / capítulos locales: https://github.com/Agregala/agregala-site
+3- -Repositorio del Plugin Facebook a Wordpress: https://github.com/Agregala/egany_facebook_to_wordpress
+
+
+## Objectivos del Proyecto
 visualizar y fortalecer la labor de los colectivos y medios que trabajan de forma autogestionada e independiente para producir su propia información, la cual no tiene la misma difusión e impacto que la de los medios masivos o tradicionales de su ciudad o territorio.
 descentralizar la web y romper la hegemonía de las redes sociales teniendo en cuenta que la mayoría de estos colectivos y medios, para compartir sus contenidos, hacen uso de sitios como Facebook, condicionados por los criterios de una empresa privada. 
 
@@ -19,9 +27,6 @@ Lo que cada colectivo pública en la web se compila en Agrega.la, así los segui
 ## Tecnologia
 Desde lo tecnológico no implica por parte de los colectivos un esfuerzo o trabajo extra, por lo que la plataforma toma y replica de manera automática los contenidos que publican en sus propias redes, webs y blog. Tampoco quita o resta el tráfico a sus plataformas de origen, debido a que la réplica tiene un link a ellos, con lo cual beneficia también a las audiencias al poder acceder desde una misma plataforma a distintos medios independientes.
 Agrega.la surge como una plataforma digital de libre acceso que reúne contenidos producidos por estes colectivos. Los principales contenidos de páginas web, blogs, fanpages o redes sociales pertenecientes a estos medios y colectivos, se trasladan y son migrados de forma automática a Agrega.la. De este modo, la información se unifica en un mismo espacio, lo cual simplifica la identificación en la web tanto de los colectivos/medios como de los contenidos que producen.
-EXPLICAR:
--uso tecnologia Wordpress
--uso e tecnologia do Plugin
 
 
 ## Contexto de la creacion y problemas a resolver
@@ -38,10 +43,10 @@ Acceder a información de colectivos o medios independientes es un proceso compl
 En este proyecto tuvo su primera versión en Brasil em 2013/2014, cuando se vivieron grandes protestas en Rio de Janeiro, momento en el que los grandes medios informaron de forma parcializada los hechos y movilizaciones de los ciudadanos inconformes con diversas violaciones de derechos humanos. Así, muchos grupos y colectivos de medios independientes empezaron a actuar, produciendo sus propios relatos y contenidos. Con eso, fue posible ampliar la pluralidad de voces. Sin embargo, muchos de estos nuevos medios se quedaron rehenes de Facebook, al adoptar un uso exclusivo de esta plataforma. Agrega.la emerje neste primero momento como un respuesta a este problema.
 Posteriormente en 2016, en el marco del III Laboratorio Iberoamericano de Innovación Ciudadana 2016 (LABIC) en Cartagena de Indias, Colombia, Agrega.la inicia una nueva etapa, ampliando su enfoque para otros países de América Latina. La idea original se complementó con el trabajo de 10 personas de diferentes países de iberoamérica y con la  participación de los colectivos de comunicación de la región Caribe en Colombia. Entre ellos la región del Caribe colombiano, Argentina o México. Ahora, la plataforma gaña la capacidad de abrigar distintas ciudades, como subsítios o capítulos locales. Hoy tenemos operantes 4 subsitios, con dezenas de medios cadastrados:
 
-agrega.la/caribe
-agrega.la/mesomexico
-agrega.la/rio
-agrega.la/rosario
+* agrega.la/caribe
+* agrega.la/mesomexico
+* agrega.la/rio
+* agrega.la/rosario
 
 
 ## Potencialidades:
