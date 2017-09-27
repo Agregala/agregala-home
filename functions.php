@@ -295,17 +295,25 @@ return false;
 
 function keep_my_links($text) {
   global $post;
-if ( '' == $text ) {
-    $text = get_the_content('');
-    $text = apply_filters('the_content', $text);
-    $text = str_replace('\]\]\>', ']]&gt;', $text);
-    $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-    $text = strip_tags($text, '<a>');
-  }
+    if ( '' == $text ) {
+        $text = get_the_content('');
+        $text = apply_filters('the_content', $text);
+        $text = str_replace('\]\]\>', ']]&gt;', $text);
+        $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+        $text = strip_tags($text, '<a>');
+      }
   return $text;
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'keep_my_links');
-
-
+?>
+<?php 
+function actualizar_red() {
+    do_action('actualizar_red');
+}
+function output_text() {
+    echo '<p>Your text.</p>';
+}
+ 
+add_action('actualizar_red','output_text');
 ?>
