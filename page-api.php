@@ -21,8 +21,7 @@
             $blogname = $blog_details->blogname;
             $nombre = strtolower($blogname);
             $url = "http://agrega.la/".$nombre."/?fb2wp_type=all"
-            $xmlData = file_get_contents($url);
-            echo $xmlData;
+            echo $url."<br>";
 
         }
         restore_current_blog(); // fin del recorrido de los sitios del multisitio 
