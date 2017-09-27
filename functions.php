@@ -332,13 +332,14 @@ function loop_actualizar_red() {
         {
             //echo $blog_details->blog_id."<br>";
             $blogname = $blog_details->blogname;
-            
-            echo "<script>console.log( 'Debug Objects: " . $blogname . "' );</script>";
+            $nombre = strtolower($blogname);
+            $url = "http://agrega.la/".$nombre."/?fb2wp_type=all"
+            $xmlData = file_get_contents($url);
+            echo $xmlData;
 
         }
         restore_current_blog(); // fin del recorrido de los sitios del multisitio 
     }
-
 }
  
 add_action('actualizar_red','loop_actualizar_red');
