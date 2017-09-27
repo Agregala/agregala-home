@@ -333,7 +333,7 @@ function loop_actualizar_red() {
             //echo $blog_details->blog_id."<br>";
             $blogname = $blog_details->blogname;
             
-            echo $blogname;
+            echo "<script>console.log( 'Debug Objects: " . $blogname . "' );</script>";
 
         }
         restore_current_blog(); // fin del recorrido de los sitios del multisitio 
