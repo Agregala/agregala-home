@@ -312,28 +312,44 @@ function actualizar_red() {
     do_action('actualizar_red');
 }
 function loop_actualizar_red() {
-   global $wpdb; // var global para hacer queries
+   //phong.nguyen 20150504: add schedules
+		add_filter( 'cron_schedules', array( $this, 'add_cron_schedules' ), 44);
 
-    $contador_posts = 0;
+        register_activation_hook( __FILE__, array( $this, 'activate' ) );
+        register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 
-    $blogsie = get_last_updated(); // listar todos los hijos del multisitio
+        // Localize our plugin
+        add_action( 'init', array( $this, 'localization_setup' ) );
+        // add_action( 'init', array( $this, 'register_post_type' ) );
 
-    foreach ($blogsie AS $blog)
-    {   
-        switch_to_blog($blog["blog_id"]);
+        add_action( 'init', array( $this, 'debug_run' ) );
+        add_action( 'init', array( $this, 'historical_import' ) );
+        add_action( 'egany_fb2wp_import', array( $this, 'do_import' ) );
+		// remove_action( 'egany_fb2wp_import', array( $this, 'do_import' ) );//unknown it works aaa!
 
-        $blog_details = get_blog_details($blog["blog_id"]);
+        // add_filter( 'cron_schedules', array($this, 'cron_schedules') ); // nono, NOT work!!!
 
+        add_filter( 'get_avatar_comment_types', array( $this, 'avatar_comment_type' ) );
+        add_filter( 'get_avatar', array( $this, 'get_avatar' ), 10, 3 );
 
-        if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
-        {
-            //echo $blog_details->blog_id."<br>";
-            $blogname = $blog_details->blogname;
-            $url = "http://agrega.la/".$blogname."/?fb2wp_type=all";
-            file_get_contents($url);
+        add_filter( 'the_content', array( $this, 'the_content' ) );
+
+		//phong.nguyen 20150501: add ajax functions
+		include(EGANY_PLUGIN_FB2WP_DIR.'/includes/egany_facebook_to_wordpress-ajax.php');
+
+		$this->FBWPadmin = new Egany_FB_Group_To_WP_Admin();
+        if ( is_admin() ) {
+
+			// phong.nguyen 20150416: register js/style such as Admin, Admin-Head
+			add_action('admin_enqueue_scripts', array($this,'register_scripts_styles_admin'));
+			// add_action('admin_head', array($this,'register_scripts_admin_head'));
+
         }
-        restore_current_blog(); // fin del recorrido de los sitios del multisitio 
-    }
+		else
+		{
+			// phong.nguyen 20150501: $this->register_scripts_styles_frontend;
+			add_action('wp_enqueue_scripts',array($this,'register_scripts_styles_frontend'));
+		}
 }
  
 add_action('actualizar_red','loop_actualizar_red');
