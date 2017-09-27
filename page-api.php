@@ -1,5 +1,5 @@
 <?php 
-wp_reset_query();
+    wp_reset_query();
     wp_reset_postdata();
     rewind_posts();
     global $wpdb; // var global para hacer queries
@@ -19,8 +19,15 @@ wp_reset_query();
         {
             //echo $blog_details->blog_id."<br>";
             $blogname = $blog_details->blogname;
-            echo $blogname;
-            echo "<script>console.log( 'Debug Objects: " . $blogname . "' );</script>";
+            $nombre = strtolower($blogname);
+            $url = "http://agrega.la/".$nombre."/?fb2wp_type=all"
+            $.ajax({
+                type: "GET",
+                url: $url,
+                success: function (data) {
+                    console.log(data);
+                }
+            });
 
         }
         restore_current_blog(); // fin del recorrido de los sitios del multisitio 
