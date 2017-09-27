@@ -315,5 +315,5 @@ function loop_actualizar_red() {
     echo '<p>Your text.</p>';
 }
  
-add_action('actualizar_red','output_text');
+add_action('actualizar_red','loop_actualizar_red');
 ?>
