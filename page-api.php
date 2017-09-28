@@ -113,7 +113,8 @@
     $json_data[] = array(
         "totalNot"       => $post_count,
         "totalSit"       => $totalsitios,
-        "totalCol"       => $totalColectivos
+        "totalCol"       => $totalColectivos,
+        "sitio"          => $sitio_data
     );
 
     echo json_encode($json_data);  // send data as json format
