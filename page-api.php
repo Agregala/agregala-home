@@ -7,6 +7,7 @@
     $nestedDataCate = array();
     $nestedData     = array();
     $json_data      = array();
+    $sitio_data      = array();
 
     $totalColectivos = 0;
     $total_osts = 0;
@@ -21,6 +22,7 @@
         
         if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
         {
+            $sitio_data[] = $blog["blog_id"];
             $post_count += $blog_details->post_count;
             $totalsitios++;
             // get_categories args
