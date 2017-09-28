@@ -8,8 +8,6 @@
     $nestedData     = array();
     $json_data      = array();
 
-    $jsides = array();
-
     $totalColectivos = 0;
     $total_osts = 0;
     $totalsitios = 0;
@@ -23,7 +21,6 @@
         
         if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
         {
-            $jsides[] = blog_details->blog_id;
             $post_count += $blog_details->post_count;
             $totalsitios++;
             // get_categories args
@@ -114,8 +111,7 @@
     $json_data[] = array(
         "totalNot"       => $post_count,
         "totalSit"       => $totalsitios,
-        "totalCol"       => $totalColectivos,
-        "totalSitios"    => $jsides
+        "totalCol"       => $totalColectivos
     );
 
     echo json_encode($json_data);  // send data as json format
