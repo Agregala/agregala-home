@@ -114,7 +114,7 @@
         "totalNot"       => $post_count,
         "totalSit"       => $totalsitios,
         "totalCol"       => $totalColectivos,
-        "sitio"          => $sitio_data
+        "totalsitio"          => $sitio_data
     );
 
     echo json_encode($json_data);  // send data as json format
