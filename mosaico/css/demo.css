@@ -511,7 +511,9 @@ body #cdawrap .carbon-text {
     color: #656768;
 }
 .odometer-inside {
-    width: 100%;
+    width: 200px;
+    display: inline-block !important;
+    float: left;
 }
 .escondido {
     display: none !important;
@@ -632,7 +634,7 @@ section h2 {
     text-align: center;
 }
 .odometer.odometer-auto-theme, .odometer.odometer-theme-plaza {
-    width: 100%;
+    width: 200px
 }
 #sidebar,
 #middle {
@@ -656,4 +658,9 @@ section h2 {
     position: relative;
     z-index: 4;
     padding: 20px;
+}
+.deslizar {
+        font-size: 20px;
+    color: black;
+    font-family: 'montserratregular';
 }

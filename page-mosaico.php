@@ -43,12 +43,13 @@
 </head>
 
 <body>
-    <div class="container-top"></div>
 	<div class="container">
         <div class="col-xs-12">
             <div id="left-div-mos" class="col-xs-12">
                 <img class="logo-header" src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="Logo agregala"/>
-                <h1>Uniendo voces comunitarias</h1>
+                <div style="text-align: center;margin: 0 auto;">
+                    <span id="noticiasTotales" class="odometer">00</span> <span class="deslizar">noticias agregadas de </span><span id="colectivosTotales" class="odometer">00</span> <span class="deslizar">colectivos libres.</span>
+                </div>
                 <div class="col-xs-12">
                     <?php 
                         wp_reset_query();
@@ -138,18 +139,6 @@
                     </div>
                     
                     <div class="clearfix"></div>
-                    <div class="col-sm-6">
-                        <section id="middle">
-                            <div id="noticiasTotales" class="odometer">00</div>
-                            <h2>Número de noticas</h2>
-                        </section>
-                    </div>
-                    <div class="col-sm-6">
-                        <section id="sidebar">
-                            <div id="colectivosTotales" class="odometer">00</div>
-                            <h2>Colectivos agregados</h2>
-                        </section>
-                    </div>
                 </div>
             </div>
             <div class="col-xs-12">
@@ -243,8 +232,6 @@
         </div>
         <div class="clearfix"></div>
 	</div>
-    <!-- /container -->
-    <div class="container-top"></div>
 	
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/vendor/jquery/jquery.min.js"></script>
 
