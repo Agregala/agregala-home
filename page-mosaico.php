@@ -141,8 +141,10 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <div class="col-xs-12">
-                <div class="grid">
+        </div>
+        <div class="clearfix"></div>
+	</div>
+    <div class="grid">
                     <!-- Obtener posts -->
                     <?php
                     wp_reset_query();
@@ -225,14 +227,24 @@
                     <button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
                     <div class="description description--preview"></div>
                 </div>
-                <!-- /preview -->
-            
-            
+	<footer class="text-center">
+        <div class="footer-above">
+            <div class="container sin-padding">
+                <div class="col-xs-12 sin-padding">
+
+
+                </div>
             </div>
         </div>
-        <div class="clearfix"></div>
-	</div>
-	
+        <div id="page-bottom" class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        Todos los contenidos encontrados en esta página son propiedad de cada medio/ colectivo.                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
