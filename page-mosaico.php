@@ -48,7 +48,7 @@
         <div class="col-xs-12">
             <div id="left-div-mos" class="col-xs-12">
                 <img class="logo-header" src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="Logo agregala"/>
-                <h1>Contando voces comunitarias</h1>
+                <h1>Uniendo voces comunitarias</h1>
                 <div class="col-xs-12">
                     <?php 
                         wp_reset_query();
