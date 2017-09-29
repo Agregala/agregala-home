@@ -76,67 +76,22 @@
                                     $blogname = $blog_details->blogname;
                                     //echo '<div class="col-sm-4 sitio-cont"><h3><a href="'.$url_site.'"><img src="http://agrega.la/wp-content/themes/agregala-home/img/flat_'.$blogname.'" /><span class="span-mosaico ">'.$blogname.'</span></a></h3></div>;'
                                     //echo '<div class="col-sm-6 sitio-cont"><h3><a href="'.$url_site.'">'.$blogname.'</a></h3></div>';
+                                    echo '<div class="backing1 col-sm-4 sitio-cont" style="background-image: url(http://agrega.la/wp-content/themes/agregala-home/img/back_'.$blogname.'.jpg);">';
+                                        echo '<div class="cover-sombra"></div>';
+                                        echo '<div class="mandar-arriba">';
+                                            echo '<h3>';
+                                                echo '<a href="#">';
+                                                    echo '<img src="http://agrega.la/wp-content/themes/agregala-home/img/flat_'.$blogname.'.png" />';
+                                                    echo '<span class="span-mosaico ">'.$blogname.'</span>';
+                                                echo '</a>';
+                                            echo '</h3>';
+                                        echo '</div>';
+                                    echo '</div>';
                                     restore_current_blog();
                                 }
                         }
                         wp_reset_query();
                     ?>
-                    
-                    <div class="backing1 col-sm-4 sitio-cont" style="background-image: url(<?php bloginfo('stylesheet_directory'); ?>/img/back_caribe.jpg);">
-                        <div class="cover-sombra"></div>
-                        <div class="mandar-arriba">
-                            <h3>
-                                <a href="#">
-                                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_caribe.png" />
-                                    <span class="span-mosaico ">Caribe</span>
-                                </a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="backing1 col-sm-4 sitio-cont" style="background-image: url(<?php bloginfo('stylesheet_directory'); ?>/img/back_rio.jpg);">
-                        <div class="cover-sombra"></div>
-                        <div class="mandar-arriba">
-                            <h3>
-                                <a href="#">
-                                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_rio.png" />
-                                    <span class="span-mosaico ">Rio</span>
-                                </a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="backing1 col-sm-4 sitio-cont" style="background-image: url(<?php bloginfo('stylesheet_directory'); ?>/img/back_mesomexico.jpg);">
-                        <div class="cover-sombra"></div>
-                        <div class="mandar-arriba">
-                            <h3>
-                                <a href="#">
-                                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_mesomexico.png" />
-                                    <span class="span-mosaico ">Mesomexico</span>
-                                </a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="backing1 col-sm-4 sitio-cont" style="background-image: url(<?php bloginfo('stylesheet_directory'); ?>/img/back_saopaulo.jpg);">
-                        <div class="cover-sombra"></div>
-                        <div class="mandar-arriba">
-                            <h3>
-                                <a href="#">
-                                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_saopaulo.png" />
-                                    <span class="span-mosaico ">Saopaulo</span>
-                                </a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="backing1 col-sm-4 sitio-cont" style="background-image: url(<?php bloginfo('stylesheet_directory'); ?>/img/back_rosario.jpg);">
-                        <div class="cover-sombra"></div>
-                        <div class="mandar-arriba">
-                            <h3>
-                                <a href="#">
-                                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_rosario.png" />
-                                    <span class="span-mosaico ">Rosario</span>
-                                </a>
-                            </h3>
-                        </div>
-                    </div>
                     
                     <div class="clearfix"></div>
                 </div>
