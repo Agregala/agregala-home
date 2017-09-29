@@ -628,3 +628,6 @@ section h2 {
     font-size: 20px;
     text-align: center;
 }
+.odometer.odometer-auto-theme, .odometer.odometer-theme-plaza {
+    width: 200px;
+}
