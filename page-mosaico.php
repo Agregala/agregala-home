@@ -272,7 +272,9 @@
 		})();
         $('#prevent-link').click(function(e) {
             e.preventDefault();
-            alert($(this).attr("#data-url"));
+            e.stopPropagation();
+            alert($(this).attr("data-url"));
+            return false;
         });
 	</script>
 </body>
