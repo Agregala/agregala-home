@@ -273,7 +273,7 @@
         $('#prevent-link').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            alert($(this).attr("data-url"));
+            window.location.href = $(this).attr("data-url");
             return false;
         });
 	</script>
