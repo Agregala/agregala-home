@@ -26,6 +26,10 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
     <script>
         $( document ).ready(function() {
+            function mandalink(recibe){
+                var locati = "http://agrega.la/"+recibe;
+                window.location=locati;
+            }
             $.getJSON('http://agrega.la/api', function(data) {
                 var json = jQuery.parseJSON(JSON.stringify(data));
                 console.log(json.length);

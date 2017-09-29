@@ -45,10 +45,7 @@
             var barks = $(this).children('option:selected').data('back');
             $(this).css('background', 'url(' + barks + ')');
         });
-        function mandalink(recibe){
-            var locati = "http://agrega.la/"+recibe;
-            window.location=locati;
-        }
+        
     });
     </script>
     
