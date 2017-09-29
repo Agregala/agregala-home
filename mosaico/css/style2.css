@@ -14,7 +14,7 @@
 	position: relative;
 	margin: 0 auto;
     width: 100% !important;
-    background: black;
+    margin-bottom: 50px;
 }
 
 .js .grid::after {
@@ -73,7 +73,7 @@ header h1 {
 .img-wrap img {
 	display: block;
 	max-width: 100%;
-    width: 200px;
+    width: 250px;
 }
 
 .preview {

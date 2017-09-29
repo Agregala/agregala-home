@@ -144,6 +144,7 @@
         </div>
         <div class="clearfix"></div>
 	</div>
+    <div class="container">
     <div class="grid">
                     <!-- Obtener posts -->
                     <?php
@@ -222,6 +223,7 @@
                 ?>
                     <!-- end posts -->
                 </div>
+        </div>
                 <!-- /grid -->
                 <div class="preview">
                     <button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
