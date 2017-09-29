@@ -50,7 +50,7 @@
                 <div id="mobile-sile" style="text-align: center;margin: 20px auto;">
                     <span id="noticiasTotales" class="odometer">00</span> <span class="deslizar desliz">noticias agregadas de </span><span id="colectivosTotales" class="odometer">00</span> <span class="deslizar roat">medios libres.</span>
                 </div>
-                <div class="col-xs-12">
+                <div id="bajartop" class="col-xs-12">
                     <?php 
                         wp_reset_query();
                         global $switched;
