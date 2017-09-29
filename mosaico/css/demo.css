@@ -688,7 +688,7 @@ section h2 {
 
 @media screen and (max-width: 1025px) {
     #mosaico-mobile {
-        width: 86%;
+        width: 86% !important;
     }
 }
 
