@@ -614,7 +614,7 @@ body #cdawrap .carbon-text {
     border: none !important;
     color: #648baf !important;
     font-weight: 200 !important;
-    font-size: 5em !important;
+    font-size: 3em !important;
 }
 .odometer-inside {
     border-radius: 40px;
@@ -663,4 +663,14 @@ section h2 {
         font-size: 20px;
     color: black;
     font-family: 'montserratregular';
+}
+.desliz {
+        position: relative;
+    left: 15px;
+    top: 5px;
+}
+.roat {
+        position: relative;
+    top: 5px;
+    left: -17px;
 }

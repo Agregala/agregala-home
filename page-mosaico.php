@@ -48,7 +48,7 @@
             <div id="left-div-mos" class="col-xs-12">
                 <img class="logo-header" src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="Logo agregala"/>
                 <div style="text-align: center;margin: 0 auto;">
-                    <span id="noticiasTotales" class="odometer">00</span> <span class="deslizar">noticias agregadas de </span><span id="colectivosTotales" class="odometer">00</span> <span class="deslizar">colectivos libres.</span>
+                    <span id="noticiasTotales" class="odometer">00</span> <span class="deslizar desliz">noticias agregadas de </span><span id="colectivosTotales" class="odometer">00</span> <span class="deslizar roat">colectivos libres.</span>
                 </div>
                 <div class="col-xs-12">
                     <?php 
