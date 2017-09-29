@@ -223,12 +223,13 @@
                 ?>
                     <!-- end posts -->
                 </div>
-        </div>
+        
                 <!-- /grid -->
                 <div class="preview">
                     <button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
                     <div class="description description--preview"></div>
                 </div>
+        </div>
 	<footer class="text-center">
         <div class="footer-above">
             <div class="container sin-padding">
