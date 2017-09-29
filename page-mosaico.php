@@ -156,7 +156,7 @@
                                 ?>
                                 <div class="grid__item" data-size="1280x857">
                                     <div class="overlay"></div>
-                                    <a data-url="<?php echo $otrageneraUrl; ?>" href="<?php echo $generaUrl; ?>" class="img-wrap"><img src="<?php echo $generaUrl; ?>" alt="image noticia" />
+                                    <a id="prevent-link" data-url="<?php echo $otrageneraUrl; ?>" href="<?php echo $generaUrl; ?>" class="img-wrap"><img src="<?php echo $generaUrl; ?>" alt="image noticia" />
                                         <div class="description description--grid">
                                             <h3><?php the_title(); ?></h3>
                                             <p><?php echo $url_site; ?> <em>&mdash; <?php echo $blogname;?></em></p>
@@ -270,6 +270,10 @@
 				}
 			});
 		})();
+        $('#prevent-link').click(function(e) {
+            e.preventDefault();
+            alert($(this).attr("#data-url"));
+        }
 	</script>
 </body>
 
