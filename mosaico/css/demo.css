@@ -706,4 +706,27 @@ section h2 {
     left: 157px;
     }
 }
-   
+@media (max-width: 667px) and (orientation: landscape) { 
+    #noticiasTotales{
+         left: -96px;
+    }
+    .desliz{
+       left: -136px;
+    }
+    #colectivosTotales{
+         left: 174px;
+    top: -50px;
+    }
+    .roat{
+           left: 102px;
+    top: -44px;
+    }
+    #mobile-sile{
+        margin-bottom: 0px !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    #mobile-sile{
+        display: none;
+    }
+}
