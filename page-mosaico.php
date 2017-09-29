@@ -138,7 +138,7 @@
 
                             /** recorrido para indexar posts **/
                             foreach($lastposts as $post) :
-                                $meta_key = $post->post_parent;
+                                $meta_key = $post->ID;
                                 $url_meta = $wpdb->get_var( $wpdb->prepare( 
                                     "
                                         SELECT meta_value 
