@@ -26,10 +26,6 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
     <script>
         $( document ).ready(function() {
-            function mandalink(recibe){
-                var locati = "http://agrega.la/"+recibe;
-                window.location=locati;
-            }
             $.getJSON('http://agrega.la/api', function(data) {
                 var json = jQuery.parseJSON(JSON.stringify(data));
                 console.log(json.length);
@@ -81,7 +77,7 @@
                                     //echo '<div class="col-sm-4 sitio-cont"><h3><a href="'.$url_site.'"><img src="http://agrega.la/wp-content/themes/agregala-home/img/flat_'.$blogname.'" /><span class="span-mosaico ">'.$blogname.'</span></a></h3></div>;'
                                     //echo '<div class="col-sm-6 sitio-cont"><h3><a href="'.$url_site.'">'.$blogname.'</a></h3></div>';
                                     $str = strtolower($blogname);
-                                    echo '<div onclick="mandalink('.$str.')" class="backing1 col-sm-4 sitio-cont" style="background-image: url(http://agrega.la/wp-content/themes/agregala-home/img/back_'.$str.'.jpg);">';
+                                    echo '<div class="backing1 col-sm-4 sitio-cont" style="background-image: url(http://agrega.la/wp-content/themes/agregala-home/img/back_'.$str.'.jpg);">';
                                         echo '<div class="cover-sombra"></div>';
                                         echo '<div class="mandar-arriba">';
                                             echo '<h3>';
