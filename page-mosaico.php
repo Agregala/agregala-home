@@ -47,7 +47,7 @@
         <div class="col-xs-12">
             <div id="left-div-mos" class="col-xs-12">
                 <img class="logo-header" src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="Logo agregala"/>
-                <div style="text-align: center;margin: 0 auto;">
+                <div style="text-align: center;margin: 20px auto;">
                     <span id="noticiasTotales" class="odometer">00</span> <span class="deslizar desliz">noticias agregadas de </span><span id="colectivosTotales" class="odometer">00</span> <span class="deslizar roat">colectivos libres.</span>
                 </div>
                 <div class="col-xs-12">
