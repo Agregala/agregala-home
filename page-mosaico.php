@@ -139,6 +139,7 @@
                             /** recorrido para indexar posts **/
                             foreach($lastposts as $post) :
                                 $meta_key = $post->ID;
+                                $post_parent = wp_get_post_parent_id( $meta_key );
                                 $url_meta = $wpdb->get_var( $wpdb->prepare( 
                                     "
                                         SELECT meta_value 
@@ -152,7 +153,7 @@
                                 if( ($url_meta != "") and ($contador_posts<43) )
                                 {
                                     $generaUrl = "http://agrega.la/wp-content/uploads/sites/".$blog["blog_id"]."\/".$url_meta;
-                                    $otrageneraUrl = "http://agrega.la/".$strr."/?p=".$meta_key;
+                                    $otrageneraUrl = "http://agrega.la/".$strr."/?p=".$post_parent;
                                 ?>
                                 <div class="grid__item" data-size="1280x857">
                                     <div class="overlay"></div>
