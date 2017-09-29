@@ -174,7 +174,7 @@
                                 'order'            => 'DESC',
                                 'post_type'        => 'attachment',
                                 'post_status'      => 'inherit',
-                                'numberposts'      => 32
+                                'numberposts'      => 40
                             );
                             $lastposts = get_posts($args); //obtener los posts del sitio hijo
 
