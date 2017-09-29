@@ -531,6 +531,9 @@ body #cdawrap .carbon-text {
 }
 
 @media screen and (max-width: 900px) {
+    #mosaico-mobile {
+        display: none;
+    }
 	.numerologia section {
 		width: 100%;
 	}
@@ -681,6 +684,12 @@ section h2 {
 #colectivosTotales{
      position: relative;
     left: -60px;   
+}
+
+@media screen and (max-width: 1025px) {
+    #mosaico-mobile {
+        width: 86%;
+    }
 }
 
    
