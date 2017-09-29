@@ -77,11 +77,11 @@
                                     //echo '<div class="col-sm-4 sitio-cont"><h3><a href="'.$url_site.'"><img src="http://agrega.la/wp-content/themes/agregala-home/img/flat_'.$blogname.'" /><span class="span-mosaico ">'.$blogname.'</span></a></h3></div>;'
                                     //echo '<div class="col-sm-6 sitio-cont"><h3><a href="'.$url_site.'">'.$blogname.'</a></h3></div>';
                                     $str = strtolower($blogname);
-                                    echo '<div class="backing1 col-sm-4 sitio-cont" style="background-image: url(http://agrega.la/wp-content/themes/agregala-home/img/back_'.$str.'.jpg);">';
+                                    echo '<div onclick="window.location="'.$url_site.'";" class="backing1 col-sm-4 sitio-cont" style="background-image: url(http://agrega.la/wp-content/themes/agregala-home/img/back_'.$str.'.jpg);">';
                                         echo '<div class="cover-sombra"></div>';
                                         echo '<div class="mandar-arriba">';
                                             echo '<h3>';
-                                                echo '<a href="#">';
+                                                echo '<a href="'.$url_site.'">';
                                                     echo '<img src="http://agrega.la/wp-content/themes/agregala-home/img/flat_'.$str.'.png" />';
                                                     echo '<span class="span-mosaico ">'.$blogname.'</span>';
                                                 echo '</a>';
