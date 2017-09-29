@@ -733,3 +733,8 @@ section h2 {
         margin-top: 30px;
     }
 }
+@media screen and (max-width: 320px) {
+    .logo-header{
+        width: 250px;
+    }
+}
