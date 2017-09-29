@@ -5,10 +5,17 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Agrega.la | mosaico</title>
+	<title>Agrega.la | Contando voces comunitarias</title>
 	<meta name="description" content="Contando voces comunitarias" />
 	<meta name="keywords" content="agrega.la, voces, comunitarias, medios, medios independientes, noticias, blog, facebook, twitter, rss" />
 	<meta name="author" content="Team Agrega.la" />
+    <link rel="icon" href="http://agrega.la/wp-content/themes/agregala-site/img/favicon.png" type="image/x-icon">
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/css/freelancer.css" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/css/normalize.css" />
 	
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/mosaico/css/demo.css" />
@@ -24,9 +31,6 @@
                 console.log(json.length);
                 var totoa = json.length-1;
                 setTimeout(function(){
-                    var reg = json[totoa].totalSit;
-                    $('#regionesTotales').html(reg);
-
                     var post = json[totoa].totalNot;
                     $('#noticiasTotales').html(post);
 
@@ -38,158 +42,164 @@
     </script>
 </head>
 
-<body class="demo-2">
+<body>
+    <div class="container-top"></div>
 	<div class="container">
-		<div class="content">
-            <header>
-                <img class="logo-header" src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/img/logo.png" alt="Logo agregala"/>
+        <div class="col-xs-12">
+            <div id="left-div-mos" class="col-sm-6">
+                <img class="logo-header" src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="Logo agregala"/>
                 <h1>Contando voces comunitarias</h1>
-                <div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="numerologia text-center">
-                            
-                                <section id="content">
-                                    <h2>Regiones agregadas</h2>
-                                    <div id="regionesTotales" class="odometer">00</div>
-                                </section>
+                <div class="col-xs-12">
+                    <?php 
+                        wp_reset_query();
+                        global $switched;
 
-                                <section id="middle">
-                                    <h2>Número de noticas</h2>
-                                    <div id="noticiasTotales" class="odometer">00</div>
-                                </section>
+                        $blog_id = get_current_blog_id();
 
-                                <section id="sidebar">
-                                    <h2>Colectivos agregados</h2>
-                                    <div id="colectivosTotales" class="odometer">00</div>
-                                </section>
-                                
-                            </div>
-                        </div>
+
+                        $geturl = "http://agrega.la/api";
+                        $obj = json_decode(file_get_contents($geturl), true);
+                        $totalobjetos = count($obj)-1; 
+
+                        $nuevototales = count($obj[$totalobjetos]['totalsitio']);
+
+                        for($r=0;$r<$nuevototales;$r++){
+                            //echo "sitio actual: ".$blog_id."<br>";
+                            //echo "otro sitio: ".$obj[$totalobjetos]['totalsitio'][$r];
+                            if($blog_id!=$obj[$totalobjetos]['totalsitio'][$r]){
+
+                                    switch_to_blog($obj[$totalobjetos]['totalsitio'][$r]); //switched to blog id 2
+
+                                    $blog_details = get_blog_details($obj[$totalobjetos]['totalsitio'][$r]);
+                                    $url_site = $blog_details->siteurl;
+                                    $blogname = $blog_details->blogname;
+                                    echo '<div class="col-sm-4 sitio-cont"><h3><a href="'.$url_site.'"><img src="http://agrega.la/wp-content/themes/agregala-home/img/flat_'.$blogname.'" /><span class="span-mosaico ">'.$blogname.'</span></a></h3></div>;'
+                                    //echo '<div class="col-sm-6 sitio-cont"><h3><a href="'.$url_site.'">'.$blogname.'</a></h3></div>';
+                                    restore_current_blog();
+                                }
+                        }
+                        wp_reset_query();
+                    ?>
+                    <!--
+                    <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_caribe.png" /><span class="span-mosaico ">Caribe</span></a></h3></div>
+                    <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_rio.png" /><span class="span-mosaico ">Rio</span></a></h3></div>
+                    <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_saopaulo.png" /><span class="span-mosaico ">Saopaulo</span></a></h3></div>
+                    <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_mesomexico.png" /><span class="span-mosaico ">Mesomexico</span></a></h3></div>
+                    <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_rosario.png" /><span class="span-mosaico ">Rosario</span></a></h3></div>
+                    -->
+                    <div class="clearfix"></div>
+                    <div class="col-sm-6">
+                        <section id="middle">
+                            <div id="noticiasTotales" class="odometer">00</div>
+                            <h2>Número de noticas</h2>
+                        </section>
                     </div>
-                    
+                    <div class="col-sm-6">
+                        <section id="sidebar">
+                            <div id="colectivosTotales" class="odometer">00</div>
+                            <h2>Colectivos agregados</h2>
+                        </section>
+                    </div>
                 </div>
-            </header>
-			<div class="grid">
-                <!-- Obtener posts -->
-                <?php
-                wp_reset_query();
-                wp_reset_postdata();
-                rewind_posts();
-                global $wpdb; // var global para hacer queries
-                
-                $contador_posts = 0;
-                
-                $blogsie = get_last_updated(); // listar todos los hijos del multisitio
+            </div>
+            <div class="col-sm-6">
+                <div class="grid">
+                    <!-- Obtener posts -->
+                    <?php
+                    wp_reset_query();
+                    wp_reset_postdata();
+                    rewind_posts();
+                    global $wpdb; // var global para hacer queries
 
-                foreach ($blogsie AS $blog)
-                {   
-                    switch_to_blog($blog["blog_id"]);
+                    $contador_posts = 0;
 
-                    $blog_details = get_blog_details($blog["blog_id"]);
-                    
-                    
-                    if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
-                    {
-                        //echo $blog_details->blog_id."<br>";
-                        $ide = $blog_details->blog_id;
-                        $url_site = $blog_details->siteurl;
-                        $blogname = $blog_details->blogname;
-                        $args = array(
-                            'orderby'          => ID,
-                            'order'            => 'DESC',
-                            'post_type'        => 'attachment',
-                            'post_status'      => 'inherit',
-                            'numberposts'      => 32
-                        );
-                        $lastposts = get_posts($args); //obtener los posts del sitio hijo
-                       
-                        /** recorrido para indexar posts **/
-                        foreach($lastposts as $post) :
-                            $meta_key = get_the_ID();
-                            $url_meta = $wpdb->get_var( $wpdb->prepare( 
-                                "
-                                    SELECT meta_value 
-                                    FROM $wpdb->postmeta 
-                                    WHERE meta_key = '_wp_attached_file' and post_id = %s
-                                ", 
-                                $meta_key
-                            ) );
-                            $contador_posts ++;
-                            //echo $featured_img_url = get_post_meta( $posty, 'syndication_permalink', true );
-                            if( ($url_meta != "") and ($contador_posts<33) )
-                            {
-                                $generaUrl = "http://agrega.la/wp-content/uploads/sites/".$blog["blog_id"]."\/".$url_meta;
-                                //$generaUrl = "http://agrega.la/wp-content/uploads/sites/5\/2017/09/fb_image_tmp-32391.jpg";
-                            ?>
-                            <div class="grid__item" data-size="1280x857">
-                                <div class="overlay"></div>
-                                <a href="<?php echo $generaUrl; ?>" class="img-wrap"><img src="<?php echo $generaUrl; ?>" alt="image noticia" />
-                                    <div class="description description--grid">
-                                        <h3><?php the_title(); ?></h3>
-                                        <p><?php echo $url_site; ?> <em>&mdash; <?php echo $blogname;?></em></p>
-                                        <div class="details">
-                                            <ul>
-                                                <li><i class="icon icon-camera"></i><span>Canon PowerShot S95</span></li>
-                                                <li><i class="icon icon-focal_length"></i><span>22.5mm</span></li>
-                                                <li><i class="icon icon-aperture"></i><span>&fnof;/5.6</span></li>
-                                                <li><i class="icon icon-exposure_time"></i><span>1/1000</span></li>
-                                                <li><i class="icon icon-iso"></i><span>80</span></li>
-                                            </ul>
+                    $blogsie = get_last_updated(); // listar todos los hijos del multisitio
+
+                    foreach ($blogsie AS $blog)
+                    {   
+                        switch_to_blog($blog["blog_id"]);
+
+                        $blog_details = get_blog_details($blog["blog_id"]);
+
+
+                        if($blog_details->blog_id >1) //entrar a cada sitio menos al principal
+                        {
+                            //echo $blog_details->blog_id."<br>";
+                            $ide = $blog_details->blog_id;
+                            $url_site = $blog_details->siteurl;
+                            $blogname = $blog_details->blogname;
+                            $args = array(
+                                'orderby'          => ID,
+                                'order'            => 'DESC',
+                                'post_type'        => 'attachment',
+                                'post_status'      => 'inherit',
+                                'numberposts'      => 32
+                            );
+                            $lastposts = get_posts($args); //obtener los posts del sitio hijo
+
+                            /** recorrido para indexar posts **/
+                            foreach($lastposts as $post) :
+                                $meta_key = get_the_ID();
+                                $url_meta = $wpdb->get_var( $wpdb->prepare( 
+                                    "
+                                        SELECT meta_value 
+                                        FROM $wpdb->postmeta 
+                                        WHERE meta_key = '_wp_attached_file' and post_id = %s
+                                    ", 
+                                    $meta_key
+                                ) );
+                                $contador_posts ++;
+                                //echo $featured_img_url = get_post_meta( $posty, 'syndication_permalink', true );
+                                if( ($url_meta != "") and ($contador_posts<33) )
+                                {
+                                    $generaUrl = "http://agrega.la/wp-content/uploads/sites/".$blog["blog_id"]."\/".$url_meta;
+                                    //$generaUrl = "http://agrega.la/wp-content/uploads/sites/5\/2017/09/fb_image_tmp-32391.jpg";
+                                ?>
+                                <div class="grid__item" data-size="1280x857">
+                                    <div class="overlay"></div>
+                                    <a href="<?php echo $generaUrl; ?>" class="img-wrap"><img src="<?php echo $generaUrl; ?>" alt="image noticia" />
+                                        <div class="description description--grid">
+                                            <h3><?php the_title(); ?></h3>
+                                            <p><?php echo $url_site; ?> <em>&mdash; <?php echo $blogname;?></em></p>
+                                            <div class="details">
+                                                <ul>
+                                                    <li><i class="icon icon-camera"></i><span>Canon PowerShot S95</span></li>
+                                                    <li><i class="icon icon-focal_length"></i><span>22.5mm</span></li>
+                                                    <li><i class="icon icon-aperture"></i><span>&fnof;/5.6</span></li>
+                                                    <li><i class="icon icon-exposure_time"></i><span>1/1000</span></li>
+                                                    <li><i class="icon icon-iso"></i><span>80</span></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <?php }
-                        endforeach;
+                                    </a>
+                                </div>
+                                <?php }
+                            endforeach;
+                        }
+                        restore_current_blog(); // fin del recorrido de los sitios del multisitio 
                     }
-                    restore_current_blog(); // fin del recorrido de los sitios del multisitio 
-                }
-            ?>
-                <!-- end posts -->
-			</div>
-			<!-- /grid -->
-			<div class="preview">
-				<button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
-				<div class="description description--preview"></div>
-			</div>
-			<!-- /preview -->
-		</div>
-        <div id="temario">
-            <div class="container no-padding">
-                <div class="container-temario-interno">
-                    <h2>Sitios <span>agregados:</span></h2>
-                    <div class="cotainer-sitios">
-                        <p>Río de Janiro <a href="http://agrega.la/rio" target="_blank"><span>agrega.la/rio</span></a></p>
-                        <p>Caribe Colombiano <a href="http://agrega.la/caribe" target="_blank"><span>agrega.la/caribe</span></a></p>
-                        <p>Rosario, Argentina <a href="http://agrega.la/rosario" target="_blank"><span>agrega.la/rosario</span></a></p>
-                        <p>MESOMÉXICO <a href="http://agrega.la/mesomexico" target="_blank"><span>agrega.la/mesomexico</span></a></p>
-                    </div>
+                ?>
+                    <!-- end posts -->
                 </div>
+                <!-- /grid -->
+                <div class="preview">
+                    <button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
+                    <div class="description description--preview"></div>
+                </div>
+                <!-- /preview -->
+            
+            
             </div>
         </div>
-        <footer class="text-center">
-            <div class="footer-above">
-                <div class="container sin-padding">
-                    <div class="col-xs-12 sin-padding">
-
-
-                    </div>
-                </div>
-            </div>
-            <div id="page-bottom" class="footer-below">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            Todos los contenidos encontrados en esta página son propiedad de cada medio/ colectivo.                    </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-		<!-- /content -->
+        <div class="clearfix"></div>
 	</div>
-    
-	<!-- /container -->
+    <!-- /container -->
+    <div class="container-top"></div>
+	
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/imagesloaded.pkgd.min.js"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/masonry.pkgd.min.js"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/mosaico/js/classie.js"></script>

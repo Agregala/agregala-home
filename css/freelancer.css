@@ -634,13 +634,6 @@ footer p span{
     margin-bottom: -16px;
   }
 }
-section {
-  padding: 100px 0;
-}
-section h2 {
-  margin: 0;
-  font-size: 3em;
-}
 section.success {
   background: #18BC9C;
   color: white;

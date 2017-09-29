@@ -127,7 +127,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-y: scroll;
 	overflow-x: hidden;
-    background: #F2F2F2;
+    background-image: url(../../img/back.jpg);
+    background-size: cover;
 }
 
 a {
@@ -386,6 +387,8 @@ body #cdawrap .carbon-text {
 
 .odometer {
   font-size: 40px !important;
+    background: rgba(1, 3, 2, .2) !important;
+    border-radius: 40px !important;
 }
 .odometer.odometer-auto-theme, .odometer.odometer-theme-plaza {
   display: inline-block;
@@ -554,4 +557,74 @@ body #cdawrap .carbon-text {
 .cotainer-sitios a:hover span{
     color: white;
     background: #77d45b;
+}
+.container-top {
+    background-image: url(../../img/pixelitoscortos.png);
+    width: 100%;
+    height: 63px;
+    background-position: left;
+    background-size: cover;
+}
+#left-div-mos a{
+    color: #010302 !important;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+#left-div-mos a:hover{
+    text-decoration: none !important;
+    color: #CB7930 !important;
+}
+.sitio-cont {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#left-div-mos {
+    margin-top: 20px;
+    margin-bottom: 50px; 
+}
+
+#left-div-mos h1{
+    margin: 10px auto;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #222423;
+    text-align: center;
+    text-transform: inherit;
+}
+.sitio-cont img{
+    width: 80px;
+    text-align: center;
+    margin: 0 auto;
+}
+.span-mosaico {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.odometer {
+    background: #B5B1B1 !important;
+    border-radius: 40px !important;
+    padding: 0px;
+    text-align: center;
+    border: 5px solid white !important;
+    color: #CB7930 !important;
+}
+.odometer-inside {
+    border-radius: 40px;
+    padding: 0px;
+    margin: 0px;
+    color: #CB7930 !important;
+}
+
+.odometer.odometer-auto-theme .odometer-digit .odometer-value, .odometer.odometer-theme-plaza .odometer-digit .odometer-value{
+    color: #CB7930 !important;
+}
+section h2 {
+    margin: 10px auto;
+    color: #010302;
+    text-transform: initial;
+    font-size: 20px;
+    text-align: center;
 }
