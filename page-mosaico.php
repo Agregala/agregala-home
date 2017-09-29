@@ -138,7 +138,7 @@
 
                             /** recorrido para indexar posts **/
                             foreach($lastposts as $post) :
-                                $meta_key = get_the_ID();
+                                $meta_key = $post->ID;
                                 $url_meta = $wpdb->get_var( $wpdb->prepare( 
                                     "
                                         SELECT meta_value 
@@ -156,7 +156,7 @@
                                 ?>
                                 <div class="grid__item" data-size="1280x857">
                                     <div class="overlay"></div>
-                                    <a href="<?php echo $generaUrl; ?>" class="img-wrap"><img src="<?php echo $generaUrl; ?>" alt="image noticia" />
+                                    <a data-url="<?php echo $otrageneraUrl; ?>" href="<?php echo $generaUrl; ?>" class="img-wrap"><img src="<?php echo $generaUrl; ?>" alt="image noticia" />
                                         <div class="description description--grid">
                                             <h3><?php the_title(); ?></h3>
                                             <p><?php echo $url_site; ?> <em>&mdash; <?php echo $blogname;?></em></p>
