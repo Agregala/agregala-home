@@ -275,7 +275,7 @@
             e.stopPropagation();
             window.location.href = $(this).attr("data-url");
             return false;
-        });
+        }).trigger( event );
 	</script>
 </body>
 
