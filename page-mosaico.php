@@ -273,7 +273,7 @@
         $('#prevent-link').click(function(e) {
             e.preventDefault();
             alert($(this).attr("#data-url"));
-        }
+        });
 	</script>
 </body>
 
