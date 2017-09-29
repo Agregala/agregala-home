@@ -270,7 +270,7 @@
 				}
 			});
 		})();
-        $('#prevent-link').click(function(e) {
+        $('.grid__item a').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
             window.location.href = $(this).attr("data-url");
