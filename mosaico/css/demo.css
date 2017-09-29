@@ -691,5 +691,19 @@ section h2 {
         width: 86% !important;
     }
 }
-
+@media screen and (max-width: 768px) {
+    #noticiasTotales{
+            left: -50px;
+    }
+    .desliz{
+        left: -85px;
+    }
+    #colectivosTotales{
+            left: -157px;
+    }
+    .roat{
+            top: -37px;
+    left: 157px;
+    }
+}
    
