@@ -144,7 +144,7 @@
         </div>
         <div class="clearfix"></div>
 	</div>
-    <div class="container">
+    <div class="container" style="width: 75%;    margin: 0 auto;">
     <div class="grid">
                     <!-- Obtener posts -->
                     <?php
