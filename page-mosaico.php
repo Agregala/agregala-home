@@ -73,20 +73,20 @@
                                     $blog_details = get_blog_details($obj[$totalobjetos]['totalsitio'][$r]);
                                     $url_site = $blog_details->siteurl;
                                     $blogname = $blog_details->blogname;
-                                    echo '<div class="col-sm-4 sitio-cont"><h3><a href="'.$url_site.'"><img src="http://agrega.la/wp-content/themes/agregala-home/img/flat_'.$blogname.'" /><span class="span-mosaico ">'.$blogname.'</span></a></h3></div>;'
+                                    //echo '<div class="col-sm-4 sitio-cont"><h3><a href="'.$url_site.'"><img src="http://agrega.la/wp-content/themes/agregala-home/img/flat_'.$blogname.'" /><span class="span-mosaico ">'.$blogname.'</span></a></h3></div>;'
                                     //echo '<div class="col-sm-6 sitio-cont"><h3><a href="'.$url_site.'">'.$blogname.'</a></h3></div>';
                                     restore_current_blog();
                                 }
                         }
                         wp_reset_query();
                     ?>
-                    <!--
+                    
                     <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_caribe.png" /><span class="span-mosaico ">Caribe</span></a></h3></div>
                     <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_rio.png" /><span class="span-mosaico ">Rio</span></a></h3></div>
                     <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_saopaulo.png" /><span class="span-mosaico ">Saopaulo</span></a></h3></div>
                     <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_mesomexico.png" /><span class="span-mosaico ">Mesomexico</span></a></h3></div>
                     <div class="col-sm-4 sitio-cont"><h3><a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/flat_rosario.png" /><span class="span-mosaico ">Rosario</span></a></h3></div>
-                    -->
+                    
                     <div class="clearfix"></div>
                     <div class="col-sm-6">
                         <section id="middle">
