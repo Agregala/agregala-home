@@ -612,7 +612,7 @@ body #cdawrap .carbon-text {
     padding: 0px;
     text-align: center;
     border: none !important;
-    color: #648baf !important;
+    color: #ff4040 !important;
     font-weight: 200 !important;
     font-size: 3em !important;
 }
@@ -672,5 +672,15 @@ section h2 {
 .roat {
         position: relative;
     top: 5px;
-    left: -17px;
+    left: -103px;
 }
+#noticiasTotales{
+        position: relative;
+    left: 50px;
+}
+#colectivosTotales{
+     position: relative;
+    left: -38px;   
+}
+
+   
